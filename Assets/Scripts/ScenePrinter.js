@@ -57,8 +57,7 @@ function printObjectRecursive(object, depth) {
             if (component && component.getTypeName) {
                 //Check if the component is a tween if so add additional info
                 if(component.tweenType){
-                    print('Found tween component');
-                    const tweenInfo = `${component.getTypeName()}-TweenScript (type:${component.tweenType}, name:${component.tweenName})`;
+                    const tweenInfo = `${component.getTypeName()}-TweenScript (type:${component.tweenType}, name:${component.tweenName}), duration: ${component.time}s`;
                     componentNames.push(tweenInfo);
                 }else{
                     componentNames.push(component.getTypeName());

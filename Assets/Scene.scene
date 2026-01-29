@@ -524,12 +524,12 @@
   Enabled: true
   ScriptAsset: !<reference> 04999153-1e1f-4077-92fe-d146f8a91618
   ScriptInputsDefault:
-    printOnStart: true
+    {}
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
-      printOnStart: false
+      printOnStart: true
   ScriptTypes:
     "":
       {}

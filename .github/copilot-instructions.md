@@ -45,10 +45,11 @@ onStartEvent.bind(function() {
 - Use `print()` for debugging instead of `console.log()` to ensure output appears in the Lens Studio Logger.
 - Wrap complex API calls (like Remote Service or Persistent Storage) in try/catch blocks.
 
-## Storboard & User Flow
-- When scripting for storyboarded lenses, always check the current storyboard for the active scene or state before executing logic.
-- Storyboard image will be provided in the .github folder named storyboard.png for reference.
-- If the storyboard.png is missing, you can skip this step.
+## 📖 Storyboard & User Flow
+- **Multi-Modal Context:** Always check for project narrative in either `.github/storyboard.png` (visual) or `.github/FLOW.md` (textual) before writing logic.
+- **Visual Reference:** Use `.github/storyboard.png` to understand the visual state, UI positioning, and frame-by-frame transitions.
+- **Textual Reference:** If `.github/FLOW.md` is present, treat it as the "Source of Truth" for complex logic, state definitions, and the specific step-by-step user journey.
+- **Conditional Handling:** If both the storyboard image and the `.github/FLOW.md` file are missing, skip this context and proceed based on the Scene Map and user prompt.
 
 ## Reaching out to the Scene Objects
 - You are strictly forbidden from using global.scene.findObjectByPath, global.scene.findObjectByName, or generic code-based search methods.
@@ -98,16 +99,15 @@ if (global.tweenManager) {
   `global.tweenManager.startTween(introCtaObject, "fadeIn");`
 
 [Scripts/ScenePrinter.js:17] --- Scene Hierarchy Start ---
-[Scripts/ScenePrinter.js:76] |-- Scripts
-[Scripts/ScenePrinter.js:76]   |-- TweenManager__PLACE_IN_SCENE (Component.ScriptComponent, Component.ScriptComponent)
-[Scripts/ScenePrinter.js:76]   |-- ScenePrinter (Component.ScriptComponent)
-[Scripts/ScenePrinter.js:76]   |-- Main (Component.ScriptComponent)
-[Scripts/ScenePrinter.js:76] |-- Camera Object (Component.Camera)
-[Scripts/ScenePrinter.js:76] |-- Lighting
-[Scripts/ScenePrinter.js:76]   |-- Envmap (Component.LightSource)
-[Scripts/ScenePrinter.js:76]   |-- Light (Component.LightSource)
-[Scripts/ScenePrinter.js:76] |-- Orthographic Camera (Component.Camera, Component.Canvas)
-[Scripts/ScenePrinter.js:76]   |-- Full Frame Region (Component.ScreenTransform, Component.ScreenRegionComponent)
-[Scripts/ScenePrinter.js:60] Found tween component
-[Scripts/ScenePrinter.js:76]     |-- Intro Cta (Component.ScreenTransform, Component.Image, Component.ScriptComponent-TweenScript (type:alpha, name:fadeIn), Component.ScriptComponent-TweenScript (type:alpha, name:fadeOut))
+[Scripts/ScenePrinter.js:75] |-- Scripts
+[Scripts/ScenePrinter.js:75]   |-- TweenManager__PLACE_IN_SCENE (Component.ScriptComponent, Component.ScriptComponent)
+[Scripts/ScenePrinter.js:75]   |-- ScenePrinter (Component.ScriptComponent)
+[Scripts/ScenePrinter.js:75]   |-- Main (Component.ScriptComponent)
+[Scripts/ScenePrinter.js:75] |-- Camera Object (Component.Camera)
+[Scripts/ScenePrinter.js:75] |-- Lighting
+[Scripts/ScenePrinter.js:75]   |-- Envmap (Component.LightSource)
+[Scripts/ScenePrinter.js:75]   |-- Light (Component.LightSource)
+[Scripts/ScenePrinter.js:75] |-- Orthographic Camera (Component.Camera, Component.Canvas)
+[Scripts/ScenePrinter.js:75]   |-- Full Frame Region (Component.ScreenTransform, Component.ScreenRegionComponent)
+[Scripts/ScenePrinter.js:75]     |-- Intro Cta (Component.ScreenTransform, Component.Image, Component.ScriptComponent-TweenScript (type:alpha, name:fadeIn), duration: 1s, Component.ScriptComponent-TweenScript (type:alpha, name:fadeOut), duration: 1s)
 [Scripts/ScenePrinter.js:28] --- Scene Hierarchy End ---
